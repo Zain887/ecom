@@ -1,13 +1,17 @@
-import './App.css'
-import UserTable from './user';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/login';
+import SignUp from './pages/signUp';
+import UserTable from './pages/user';
+
 
 function App() {
   return (
-    <>
-      <h1 className='text-red-500 hover:text-white cursor-pointer duration-300 font-extrabold'>Welcom to E-COM Studio</h1>
-      <UserTable />
-    </>
-  )
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/" element={<UserTable />} />
+      </Routes>
+  );
 }
 
-export default App
+export default App;
